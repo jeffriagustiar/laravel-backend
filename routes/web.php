@@ -13,8 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'DashboardController@index');
+Route::get('/', 'DashboardController@index')->name('home');
+
+Route::get('products','ProductController@index')->name('products-index');
+Route::get('products/create','ProductController@index')->name('products-create');
 
 // Route::get('/home', 'HomeController@index')->name('home');
 
+// Auth::routes(['register' => false]);
 Auth::routes(['register' => false]);
