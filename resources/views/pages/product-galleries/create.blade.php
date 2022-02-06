@@ -27,7 +27,7 @@
                 <label for="photo" class="from-control-label">Foto Barang</label>
                 <input type="file" name="photo" 
                         value="{{ old('photo') }}"
-                        {{-- accept="image/*" --}}
+                        accept="image/*"
                         class="form-control @error('photo')
                             is-invalid
                         @enderror">

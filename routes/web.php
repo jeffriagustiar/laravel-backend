@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'DashboardController@index')->name('home');
 
+Route::get('products/gallery/{id}','ProductController@gallery')->name('products-gallery');
+
 Route::get('/products','ProductController@index')->name('products-index');
 Route::get('/products/create','ProductController@create')->name('products-create');
 Route::post('/products/store','ProductController@store')->name('products-store');
@@ -26,8 +28,10 @@ Route::delete('/products/delete/{id}','ProductController@destroy')->name('produc
 Route::get('/product-galleries','ProductGalleryController@index')->name('product-galleries-index');
 Route::get('/product-galleries/create','ProductGalleryController@create')->name('product-galleries-create');
 Route::post('/product-galleries/store','ProductGalleryController@store')->name('product-galleries-store');
-Route::post('/product-galleries/delete/{id}','ProductGalleryController@destroy')->name('product-galleries-delete');
+Route::delete('/product-galleries/delete/{id}','ProductGalleryController@destroy')->name('product-galleries-delete');
+
+
 // Route::get('/home', 'HomeController@index')->name('home');
 
-// Auth::routes(['register' => false]);
 Auth::routes(['register' => false]);
+// Auth::routes();

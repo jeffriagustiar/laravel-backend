@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use Illuminate\Http\Request;
-use App\Http\Requests\ProductRequest;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use App\Models\ProductGallery;
+use App\Http\Requests\ProductRequest;
 
 class ProductController extends Controller
 {
@@ -113,6 +114,21 @@ class ProductController extends Controller
         $i = Product::findOrFail($id);
         $i->delete();
 
+        Product::where('products_id',$id)->delete();
+
         return redirect()->route('products-index');
+    }
+
+    public function gallery(Request $request, $id)
+    {
+        $p = Product::findOrFail($id);
+        $i = ProductGallery::with('product')
+            ->where('products_id',$id)
+            ->get();
+        // dd($i);
+        return view('pages.products.gallery',[
+            'product' => $p,
+            'items' => $i
+        ]);
     }
 }

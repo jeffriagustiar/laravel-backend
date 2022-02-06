@@ -31,8 +31,7 @@
                                             <td>{{ $i->price }}</td>
                                             <td>{{ $i->quantity }}</td>
                                             <td>
-                                                {{-- <a href="{{ route('products-gallery',$i->id) }}" class="btn btn-info btn-sm"> --}}
-                                                <a href="#" class="btn btn-info btn-sm">
+                                                <a href="{{ route('products-gallery',$i->id) }}" class="btn btn-info btn-sm">
                                                     <i class="fa fa-picture-o "></i>
                                                 </a>
                                                 <a href="{{ route('products-edit',$i->id) }}" class="btn btn-primary btn-sm">
