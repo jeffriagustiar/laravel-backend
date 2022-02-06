@@ -15,9 +15,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'DashboardController@index')->name('home');
 
-Route::get('products','ProductController@index')->name('products-index');
-Route::get('products/create','ProductController@index')->name('products-create');
-
+Route::get('/products','ProductController@index')->name('products-index');
+Route::get('/products/create','ProductController@create')->name('products-create');
+Route::post('/products/store','ProductController@store')->name('products-store');
+Route::get('/products/{id}','ProductController@edit')->name('products-edit');
+Route::post('/products/update/{id}','ProductController@update')->name('products-update');
+Route::delete('/products/delete/{id}','ProductController@destroy')->name('products-delete');
 // Route::get('/home', 'HomeController@index')->name('home');
 
 // Auth::routes(['register' => false]);

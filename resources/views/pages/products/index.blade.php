@@ -22,9 +22,9 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
 
                                         @forelse ($items as $i)
+                                        <tr>
                                             <td>{{ $i->id }}</td>
                                             <td>{{ $i->name }}</td>
                                             <td>{{ $i->type }}</td>
@@ -35,14 +35,10 @@
                                                 <a href="#" class="btn btn-info btn-sm">
                                                     <i class="fa fa-picture-o "></i>
                                                 </a>
-                                                {{-- <a href="{{ route('products-edit',$i->id) }}" class="btn btn-primary btn-sm"> --}}
-                                                <a href="#" class="btn btn-primary btn-sm">
-
+                                                <a href="{{ route('products-edit',$i->id) }}" class="btn btn-primary btn-sm">
                                                     <i class="fa fa-pencil"></i>
                                                 </a>
-                                                {{-- <form action="{{ route('products-delete',$i->id) }}" method="POST" class="d-inline" enctype="multipart/form-data"> --}}
-                                                <form action="#" method="POST" class="d-inline" enctype="multipart/form-data">
-
+                                                <form action="{{ route('products-delete',$i->id) }}" method="POST" class="d-inline" enctype="multipart/form-data">
                                                     @csrf
                                                     @method('delete')
                                                     <button class="btn btn-danger btn-sm">
@@ -50,6 +46,7 @@
                                                     </button>
                                                 </form>
                                             </td>
+                                        </tr>
                                         @empty
                                         <tr>
                                             <td colspan="6" class="text-center p-5">
@@ -57,8 +54,7 @@
                                             </td>
                                         </tr>
                                         @endforelse
-                                        
-                                    </tr>
+
                                 </tbody>
                             </table>
                         </div>
