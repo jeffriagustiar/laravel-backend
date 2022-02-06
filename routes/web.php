@@ -31,6 +31,15 @@ Route::post('/product-galleries/store','ProductGalleryController@store')->name('
 Route::delete('/product-galleries/delete/{id}','ProductGalleryController@destroy')->name('product-galleries-delete');
 
 
+Route::get('/transactions','TransactionController@index')->name('transactions-index');
+Route::get('/transactions/create','TransactionController@create')->name('transactions-create');
+Route::post('/transactions/store','TransactionController@store')->name('transactions-store');
+Route::get('/transactions/{id}','TransactionController@edit')->name('transactions-edit');
+Route::get('/transactions/show/{id}','TransactionController@show')->name('transactions-show');
+Route::delete('/transactions/delete/{id}','TransactionController@destroy')->name('transactions-delete');
+
+
+
 // Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes(['register' => false]);
