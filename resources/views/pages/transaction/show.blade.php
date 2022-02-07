@@ -50,7 +50,7 @@
     </tr>
 </table>
 
-{{-- <div class="row">
+<div class="row">
     <div class="col-4">
         <a href="{{ route('transaction-status',$item->id) }}?status=SUCCESS" class="btn btn-success btn-block">
             <i class="fa fa-check">Set Sukses</i>
@@ -68,4 +68,4 @@
             <i class="fa fa-spinner">Set Pending</i>
         </a>
     </div>
-</div> --}}
+</div>

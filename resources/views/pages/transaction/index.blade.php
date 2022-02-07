@@ -47,16 +47,14 @@
                                             </td>
                                             <td>
 
-                                                {{-- @if ($i->transaction_status == 'PENDING') --}}
-                                                    {{-- {{ route('transaction-status',$i->id) }}?status=SUCCESS --}}
-                                                    {{-- <a href="#" class="btn btn-success btn-sm"> --}}
-                                                        {{-- <i class="fa fa-check"></i> --}}
-                                                    {{-- </a> --}}
-                                                    {{-- {{ route('transaction-status',$i->id) }}?status=FAILED --}}
-                                                    {{-- <a href="#" class="btn btn-warning btn-sm"> --}}
-                                                        {{-- <i class="fa fa-times"></i> --}}
-                                                    {{-- </a> --}}
-                                                {{-- @endif --}}
+                                                @if ($i->transaction_status == 'PENDING')
+                                                    <a href="{{ route('transaction-status',$i->id) }}?status=SUCCESS" class="btn btn-success btn-sm">
+                                                        <i class="fa fa-check"></i>
+                                                    </a>
+                                                    <a href="{{ route('transaction-status',$i->id) }}?status=FAILED" class="btn btn-warning btn-sm">
+                                                        <i class="fa fa-times"></i>
+                                                    </a>
+                                                @endif
                                                 
 
 
