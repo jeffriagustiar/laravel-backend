@@ -111,7 +111,7 @@
                                 <div class="col-lg-6 col-xl-12">
                                     <div class="card br-0">
                                         <div class="card-body">
-                                            <div class="chart-container ov-h">
+                                            <div class="chart-container">
                                                 <div id="flotPie1" class="float-chart"></div>
                                             </div>
                                         </div>

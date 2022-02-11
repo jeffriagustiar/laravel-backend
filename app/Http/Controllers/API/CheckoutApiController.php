@@ -32,6 +32,6 @@ class CheckoutApiController extends Controller
 
         $t->details()->saveMany($details);
 
-        return ResponseFormatter::success($t);
+        return ResponseFormatter::success($t,'Data sukses ditambahkan');
     }
 }
